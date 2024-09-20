@@ -1,0 +1,10 @@
+#macro RIGHT 0
+#macro UP 1
+#macro LEFT 2
+#macro DOWN 3
+#macro IDLERIGHT 4
+#macro IDLEUP 5
+#macro IDLELEFT 6
+#macro IDLEDOWN 7
+#macro WALKSPEED 2
+#macro RUNSPEED 3

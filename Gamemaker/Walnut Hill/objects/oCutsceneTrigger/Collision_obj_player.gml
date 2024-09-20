@@ -1,0 +1,1 @@
+TriggerCutscene(player_face,follower1_face,follower2_face,follower3_face,CUTSCENE_EXAMPLE);

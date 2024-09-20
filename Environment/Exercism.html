@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit -->
+<html lang="en-US" class="js-focus-visible" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; min-height: 100%; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ1 .cm-iso {unicode-bidi: isolate;}
+.ͼ1 .cm-announced {position: fixed; top: -10000px;}
+@media print {.ͼ1 .cm-announced {display: none;}}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; inset-inline-start: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-highlightSpace:before {content: attr(data-display); position: absolute; pointer-events: none; color: #888;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-a11y-panel {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;}
+.ͼ1 .cm-selectionMatch {background-color: #99ff7780;}
+.ͼ1 .cm-searchMatch .cm-selectionMatch {background-color: transparent;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li, .ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > completion-section {padding: 1px 3px; line-height: 1.2;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li {overflow-x: hidden; text-overflow: ellipsis; cursor: pointer;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > completion-section {display: list-item; border-bottom: 1px solid silver; padding-left: 0.5em; opacity: 0.7;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul {font-family: monospace; white-space: nowrap; overflow: hidden auto; max-width: 700px; max-width: min(700px, 95vw); min-width: 250px; max-height: 10em; height: 100%; list-style: none; margin: 0; padding: 0;}
+.ͼ2 .cm-tooltip-autocomplete ul li[aria-selected] {background: #17c; color: white;}
+.ͼ2 .cm-tooltip-autocomplete-disabled ul li[aria-selected] {background: #777;}
+.ͼ3 .cm-tooltip-autocomplete ul li[aria-selected] {background: #347; color: white;}
+.ͼ3 .cm-tooltip-autocomplete-disabled ul li[aria-selected] {background: #444;}
+.ͼ1 .cm-completionListIncompleteTop:before, .ͼ1 .cm-completionListIncompleteBottom:after {content: "···"; opacity: 0.5; display: block; text-align: center;}
+.ͼ1 .cm-tooltip.cm-completionInfo {position: absolute; padding: 3px 9px; width: max-content; max-width: 400px; box-sizing: border-box;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left {right: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right {left: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left-narrow {right: 30px;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right-narrow {left: 30px;}
+.ͼ2 .cm-snippetField {background-color: #00000022;}
+.ͼ3 .cm-snippetField {background-color: #ffffff22;}
+.ͼ1 .cm-snippetFieldPosition {vertical-align: text-top; width: 0; height: 1.15em; display: inline-block; margin: 0 -0.7px -.7em; border-left: 1.4px dotted #888;}
+.ͼ1 .cm-completionMatchedText {text-decoration: underline;}
+.ͼ1 .cm-completionDetail {margin-left: 0.5em; font-style: italic;}
+.ͼ1 .cm-completionIcon {font-size: 90%; width: .8em; display: inline-block; text-align: center; padding-right: .6em; opacity: 0.6; box-sizing: content-box;}
+.ͼ1 .cm-completionIcon-function:after, .ͼ1 .cm-completionIcon-method:after {content: 'ƒ';}
+.ͼ1 .cm-completionIcon-class:after {content: '○';}
+.ͼ1 .cm-completionIcon-interface:after {content: '◌';}
+.ͼ1 .cm-completionIcon-variable:after {content: '𝑥';}
+.ͼ1 .cm-completionIcon-constant:after {content: '𝐶';}
+.ͼ1 .cm-completionIcon-type:after {content: '𝑡';}
+.ͼ1 .cm-completionIcon-enum:after {content: '∪';}
+.ͼ1 .cm-completionIcon-property:after {content: '□';}
+.ͼ1 .cm-completionIcon-keyword:after {content: '🔑︎';}
+.ͼ1 .cm-completionIcon-namespace:after {content: '▢';}
+.ͼ1 .cm-completionIcon-text:after {content: 'abc'; font-size: 50%; vertical-align: middle;}
+.ͼ1 .cm-tooltip {z-index: 100; box-sizing: border-box;}
+.ͼ2 .cm-tooltip {border: 1px solid #bbb; background-color: #f5f5f5;}
+.ͼ2 .cm-tooltip-section:not(:first-child) {border-top: 1px solid #bbb;}
+.ͼ3 .cm-tooltip {background-color: #333338; color: white;}
+.ͼ1 .cm-tooltip-arrow:before, .ͼ1 .cm-tooltip-arrow:after {content: ''; position: absolute; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:before {border-top: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:after {border-top: 7px solid #f5f5f5; bottom: 1px;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow {bottom: -7px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:before {border-bottom: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:after {border-bottom: 7px solid #f5f5f5; top: 1px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow {top: -7px;}
+.ͼ1 .cm-tooltip-arrow {height: 7px; width: 14px; position: absolute; z-index: -1; overflow: hidden;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:before {border-top-color: #333338; border-bottom-color: #333338;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:after {border-top-color: transparent; border-bottom-color: transparent;}
+.ͼ1.cm-focused .cm-matchingBracket {background-color: #328c8252;}
+.ͼ1.cm-focused .cm-nonmatchingBracket {background-color: #bb555544;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+.ͼ5 {color: #404740;}
+.ͼ6 {text-decoration: underline;}
+.ͼ7 {text-decoration: underline; font-weight: bold;}
+.ͼ8 {font-style: italic;}
+.ͼ9 {font-weight: bold;}
+.ͼa {text-decoration: line-through;}
+.ͼb {color: #708;}
+.ͼc {color: #219;}
+.ͼd {color: #164;}
+.ͼe {color: #a11;}
+.ͼf {color: #e40;}
+.ͼg {color: #00f;}
+.ͼh {color: #30a;}
+.ͼi {color: #085;}
+.ͼj {color: #167;}
+.ͼk {color: #256;}
+.ͼl {color: #00c;}
+.ͼm {color: #940;}
+.ͼn {color: #f00;}
+.ͼ4 .cm-line ::selection {background-color: transparent !important;}
+.ͼ4 .cm-line::selection {background-color: transparent !important;}
+.ͼ4 .cm-line {caret-color: transparent !important;}
+.ͼ4 .cm-content {caret-color: transparent !important;}
+</style><style type="text/css">.turbo-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 2147483647;
+  transition:
+    width 300ms ease-out,
+    opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}
+</style>
+
+<link as="font" crossorigin="anonymous" href="https://assets.exercism.org/assets/poppins-v20-latin-regular-ac6d71b4d5fdd2b3dabc9a06ff6c001e4251da0b.woff2" rel="preload" type="font/woff2">
+<link as="font" crossorigin="anonymous" href="https://assets.exercism.org/assets/poppins-v20-latin-600-179f97ec0275f09603a8db94d4380eb584d81cd5.woff2" rel="preload" type="font/woff2">
+<link rel="stylesheet" href="./Exercism_files/website-5f192d7c78dedb03ff0d25654960defc96e57d29.css" data-turbo-track="reload">
+<link rel="stylesheet" href="./Exercism_files/editor-3fa9b68fc65a5d891b1bee5a667bddc82ce50daa.css" data-turbo-track="reload"><link rel="stylesheet" href="./Exercism_files/track-b0c68b5ba018c5568c607cce3b7b839ab236d2a7.css" data-turbo-track="reload">
+<link as="font" crossorigin="anonymous" href="https://assets.exercism.org/assets/poppins-v20-latin-500-0da2d17e738f46d2a09e6fb7969da451719a9820.woff2" rel="preload" type="font/woff2">
+<link as="font" crossorigin="anonymous" href="https://assets.exercism.org/assets/poppins-v20-latin-700-cb726212d5d525021752a1d8470a0fb593e0c49e.woff2" rel="preload" type="font/woff2">
+<link as="font" crossorigin="anonymous" href="https://assets.exercism.org/assets/source-code-pro-v22-latin_latin-ext-regular-ac7e13e27e17f830518f9899f1928cb5bfde3c3b.woff2" rel="preload" type="font/woff2">
+<style>
+  @font-face {
+    font-display: fallback;
+    font-family: PoppinsInitial;
+    font-weight: 400;
+    src: url(https://assets.exercism.org/assets/poppins-v20-latin-regular-ac6d71b4d5fdd2b3dabc9a06ff6c001e4251da0b.woff2) format('woff2');
+  }
+</style>
+<style>
+  @font-face {
+    font-display: fallback;
+    font-family: PoppinsInitial;
+    font-weight: 500;
+    src: url(https://assets.exercism.org/assets/poppins-v20-latin-600-179f97ec0275f09603a8db94d4380eb584d81cd5.woff2) format('woff2');
+  }
+</style>
+<style>
+  @font-face {
+    font-display: fallback;
+    font-family: PoppinsInitial;
+    font-weight: 600;
+    src: url(https://assets.exercism.org/assets/poppins-v20-latin-600-179f97ec0275f09603a8db94d4380eb584d81cd5.woff2) format('woff2');
+  }
+</style>
+<style>
+  @font-face {
+    font-display: fallback;
+    font-family: PoppinsInitial;
+    font-weight: 700;
+    src: url(https://assets.exercism.org/assets/poppins-v20-latin-600-179f97ec0275f09603a8db94d4380eb584d81cd5.woff2) format('woff2');
+  }
+</style>
+<style>
+  body {
+    --body-font: Poppins, PoppinsInitial, serif;
+    font-family: var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+</style>
+<link rel="stylesheet" href="./Exercism_files/application-69fb7b3abaf2e7663cc89f6a267aa2796b38294d.css" data-turbo-track="reload">
+<script src="./Exercism_files/core-b2c4d22ebaf0c278be84a5f436868441d72701c4.js.download" crossorigin="anonymous" type="module" data-turbo-track="reload" data-turbo-eval="false"></script>
+<script src="./Exercism_files/application-7b04c18a1ef299db6e5bb77e67491fe4385df8f3.js.download" crossorigin="anonymous" type="module" data-turbo-track="reload" data-turbo-eval="false" defer="defer"></script>
+<script src="./Exercism_files/internal-c2ee1cd87348f7e39d508834912f995c54f04598.js.download" crossorigin="anonymous" type="module" data-turbo-track="reload" data-turbo-eval="false" defer="defer"></script>
+<link rel="stylesheet" href="./Exercism_files/internal-4863594b00c0b47fec3c059f44133b2ac39650b6.css" data-turbo-track="reload">
+<link rel="stylesheet" href="./Exercism_files/signed-in-d1348255dadfcb99120c4c22e7c233599fa23d06.css" data-turbo-track="reload">
+<script async="" data-api="/usage/api/event" data-domain="exercism.org" src="./Exercism_files/script.js.download"></script>
+
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="bisp6FtxmZlLnVyU-tXrWB6_pnH0bAGQDNCdAImswXTKJxdDH3QFc3MArFlsqvbRvFgeNn8X_vf8tWCPf13JJw">
+
+<meta name="action-cable-url" content="wss://exercism.org/cable">
+<meta content="no-cache" name="turbo-cache-control">
+<meta content="language-servers-925786784.eu-west-2.elb.amazonaws.com" name="language-server-url">
+<meta content="https://exercism.org/api/v2/bug_reports" name="bug-reports-url">
+<meta content="https://exercism.org/api/v2/markdown/parse" name="parse-markdown-url">
+<meta content="1895705" name="user-id">
+<meta content="pk_live_51IDGMXEoOT0Jqx0UGsyx7fUW7iojTCPobNQDDoVdVY64qsyeNyFDqQRAgXSdj2HF8mYzPGxsBWIEFPnenq0lEhLH00x7KfG52T" name="stripe-publishable-key">
+<title>Exercism</title>
+<meta content="Learn, practice and get world-class mentoring in over 50 languages. 100% free." name="description">
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@exercism_io" name="twitter:site">
+<meta content="@exercism_io" name="twitter:creator">
+<meta content="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit" name="twitter:url">
+<meta content="Exercism" name="twitter:title">
+<meta content="Learn, practice and get world-class mentoring in over 50 languages. 100% free." name="twitter:description">
+<meta content="https://assets.exercism.org/meta/og.png" name="twitter:image">
+<meta content="Exercism" property="og:title">
+<meta content="website" property="og:type">
+<meta content="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit" property="og:url">
+<meta content="https://assets.exercism.org/meta/og.png" property="og:image">
+<meta content="Learn, practice and get world-class mentoring in over 50 languages. 100% free." property="og:description">
+<meta content="Exercism" property="og:site_name">
+<meta content="744760440" property="fb:admins">
+<link href="https://assets.exercism.org/meta/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="https://assets.exercism.org/meta/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="https://assets.exercism.org/meta/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="https://exercism.org/site.webmanifest" rel="manifest">
+<link href="https://exercism.org/blog.rss" rel="alternate" title="Exercism&#39;s Blog" type="application/rss+xml">
+
+
+</head>
+<body class="namespace-tracks controller-exercises action-edit theme-light user-signed_in">
+<header id="site-header"><a class="announcement-bar md:block hidden" href="https://exercism.org/insiders"><div class="lg-container"><span class="emoji mr-6">👋</span><span>Enjoying Exercism? We need your help to survive…</span><strong>Please support us if you can!</strong></div></a><div class="lg-container container"><a class="exercism-link xl:block" data-turbo-frame="tf-main" href="https://exercism.org/"><img alt="Exercism" class="c-icon" src="./Exercism_files/exercism-with-logo-black-12752bd7fcf6862ba8ad7a2b75e21a9b2409d7fd.svg"></a><div class="docs-search"><div class="c-search-bar"><input class="--search" placeholder="Search Exercism&#39;s docs..."></div></div><nav class="signed-in" role="navigation"><ul><li class="nav-element "><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/tracks"><span tabindex="-1" role="none" class="nav-element-label ">Learn</span></a><div class="nav-element-dropdown has-view" style="--dropdown-offset: -0px;" role="menu"><ul><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/tracks"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-none" src="./Exercism_files/nav-tracks-9fea2eca1d8eb6bcb7da69ce8e4fd34631b366e3.svg"><div class="overflow-hidden pr-40"><h6>Language Tracks</h6><p>Upskill in 65+ languages</p></div></div></a><div class="nav-dropdown-view"><div class="nav-dropdown-view-content"><div class="flex flex-row border-b-2 border-backgroundColorNavDropdown py-12 px-20">
+<div class="text-h5">Your recent tracks</div>
+<a class="ml-auto flex btn-link" href="https://exercism.org/tracks"><div>See all</div>
+<img alt="" class="c-icon" src="./Exercism_files/arrow-right-0f5e363467e0c55fe280b4864639a9c677afa0d2.svg">
+</a></div>
+<div class="nav-dropdown-track-list flex flex-col">
+<a class="hover:bg-backgroundColorHoverMenuTrack pt-10 pb-16 px-20 bg-backgroundColorA border-b-2 border-backgroundColorNavDropdown" href="https://exercism.org/tracks/javascript"><div class="flex flex-row items-start">
+<img class="w-[48px] h-[48px] mr-16" src="./Exercism_files/javascript.svg">
+<div class="flex flex-col w-fill">
+<div class="text-h6 mb-8">JavaScript</div>
+<div class="flex flex-row bg-backgroundColorI rounded-8 mb-12 w-fill h-[6px]">
+<div class="rounded-8 h-fill min-w-[6px]" style="background:var(--fillColorProgress);width:4.1%"></div>
+</div>
+<div class="text-13 leading-150 text-textColor6">Last touched 3 days</div>
+</div>
+</div>
+</a><a class="hover:bg-backgroundColorHoverMenuTrack pt-10 pb-16 px-20 bg-backgroundColorA border-b-2 border-backgroundColorNavDropdown" href="https://exercism.org/tracks/python"><div class="flex flex-row items-start">
+<img class="w-[48px] h-[48px] mr-16" src="./Exercism_files/python.svg">
+<div class="flex flex-col w-fill">
+<div class="text-h6 mb-8">Python</div>
+<div class="flex flex-row bg-backgroundColorI rounded-8 mb-12 w-fill h-[6px]">
+<div class="rounded-8 h-fill min-w-[6px]" style="background:var(--fillColorProgress);width:1.4%"></div>
+</div>
+<div class="text-13 leading-150 text-textColor6">Last touched 27 days</div>
+</div>
+</div>
+</a></div>
+</div></div></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/challenges/48in24"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-none" src="./Exercism_files/nav-12in23-303e03b7ca8a8bee4dce835c02772ea4a3c86b49.svg"><div class="overflow-hidden pr-40"><h6>#48in24 Challenge</h6><p>A different challenge each week in 2024</p></div></div></a><div class="nav-dropdown-view"><div class="nav-dropdown-view-content"><div class="text-center flex flex-col items-center items-stretch pt-32 px-24">
+<h2 class="text-h4 mb-8">The #48in24 Challenge</h2>
+<p class="text-p-base font-semibold mb-8">
+Try out a different programming challenge each week during 2024, curated and guided by us!
+</p>
+<p class="text-p-base mb-16">
+Build your programming skills one week at a time.
+Join our community as we explore a different exercise each week, digging into how it can be solved with different languages and paradigms.
+</p>
+<a class="btn-primary btn-s mb-12" href="https://exercism.org/challenges/48in24">Explore #48in24</a>
+<p class="text-p-small mb-8">
+For each week we've chosen a different exercise to feature, with approaches, walkthroughs, videos, and more.
+</p>
+</div>
+</div></div></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/journey"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-none" src="./Exercism_files/nav-journey-08d0785bc7b3d22d165f2865db17ed403851890a.svg"><div class="overflow-hidden pr-40"><h6>Your Journey</h6><p>Explore your Exercism journey</p></div></div></a><div class="nav-dropdown-view"><div class="nav-dropdown-view-content"><div id="journey-view">
+<div class="journey-contents">
+<div class="content">
+<img alt="" class="c-icon" src="./Exercism_files/reputation-5b5938e36519908ac61075db3b9826307a0f907a.svg">
+<span>Reputation</span>
+</div>
+<div class="content">
+<img alt="" class="c-icon" src="./Exercism_files/badges-72101413cc294464bcbce9d5b1a87a8876fd7cab.svg">
+<span>Badges</span>
+</div>
+<div class="content">
+<img alt="" class="c-icon" src="./Exercism_files/code-history-f2bb78481f54c3df3b45e294bdc554bbdff4d2b1.svg">
+<span>History</span>
+</div>
+<div class="content">
+<span>And more…</span>
+</div>
+</div>
+</div>
+</div></div></li></ul></div><div class="arrow"></div></li><li class="nav-element "><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/community"><span tabindex="-1" role="none" class="nav-element-label ">Discover</span></a><div class="nav-element-dropdown has-no-view" style="--dropdown-offset: -20px;" role="menu"><ul><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/perks"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-none" src="./Exercism_files/perks-gradient-0e53b8b88c052e0ccfe01e285368fc9f9af379d7.svg"><div class="overflow-hidden pr-40"><h6>Exercism Perks</h6><p>Offers &amp; discounts from our partners</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/community/videos"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-none" src="./Exercism_files/external-site-youtube-576ec3c908a28230467d08470876b23c722f30da.svg"><div class="overflow-hidden pr-40"><h6>Community Videos</h6><p>Streaming, walkthroughs &amp; more</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/community/brief_introductions"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-none" src="./Exercism_files/brief-introductions-gradient-3439520e35035eed80d2dd3007a6cd169002a506.svg"><div class="overflow-hidden pr-40"><h6>Brief Introduction Series</h6><p>Short language overviews</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/community/interviews"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-none" src="./Exercism_files/interview-gradient-af38864f2f7811ce5ed451df999f845ff7ea615b.svg"><div class="overflow-hidden pr-40"><h6>Interviews &amp; Stories</h6><p>Get inspired by people's stories</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" target="_blank" rel="noreferrer" href="https://exercism.org/r/discord"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-none" src="./Exercism_files/external-site-discord-blue-601d4e0f105167ec2923cc05ff798066cef6018c.svg"><div class="overflow-hidden pr-40"><h6>Discord</h6><p>Chat &amp; hang with the community</p></div><img alt="The link opens in a new window or tab" class="c-icon external-icon filter-textColor6" src="./Exercism_files/external-link-49b422d65245eaf4cb29a072e85d73b5c6b8aa04.svg"></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" target="_blank" rel="noreferrer" href="https://exercism.org/r/forum"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-none" src="./Exercism_files/discourser-a9f3a217ecdcdf6ad48cc87060162217030d2eb8.svg"><div class="overflow-hidden pr-40"><h6>Forum</h6><p>Dig deeper into topics</p></div><img alt="The link opens in a new window or tab" class="c-icon external-icon filter-textColor6" src="./Exercism_files/external-link-49b422d65245eaf4cb29a072e85d73b5c6b8aa04.svg"></div></a></li></ul></div><div class="arrow"></div></li><li class="nav-element "><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/contributing"><span tabindex="-1" role="none" class="nav-element-label ">Contribute</span></a><div class="nav-element-dropdown has-no-view" style="--dropdown-offset: -20px;" role="menu"><ul><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/contributing"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-textColor6" src="./Exercism_files/overview-9e9a39e9f2e81d2a28adf4254c588f9864d7e3a3.svg"><div class="overflow-hidden pr-40"><h6>Getting started</h6><p>How you can help Exercism</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/mentoring"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-textColor6" src="./Exercism_files/mentoring-4d1e266458e8e3293b94679b92ccea4aa2cdb58b.svg"><div class="overflow-hidden pr-40"><h6>Mentoring</h6><p>Support others as they learn</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/docs"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-textColor6" src="./Exercism_files/docs-95801430359f8daa2166eda2663cf925b26e7ac6.svg"><div class="overflow-hidden pr-40"><h6>Docs</h6><p>Everything you need to help</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/contributing/contributors"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-textColor6" src="./Exercism_files/contributors-8873894d89a89d8a22512b9253d17a57b91df2d7.svg"><div class="overflow-hidden pr-40"><h6>Contributors</h6><p>Meet the people behind Exercism</p></div></div></a></li></ul></div><div class="arrow"></div></li><li class="nav-element "><span tabindex="0" role="none" class="nav-element-label nav-element-focusable">More</span><div class="nav-element-dropdown has-no-view" style="--dropdown-offset: -0px;" role="menu"><ul><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/donate"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-textColor6" src="./Exercism_files/donate-f0162e3dfad842a240d30ef6d422c5f4a969d857.svg"><div class="overflow-hidden pr-40"><h6>Donate</h6><p>Help support our mission</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/about"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-textColor6" src="./Exercism_files/exercism-face-0c7e5dc39e944a18810e6e770430b3f1e06a81cb.svg"><div class="overflow-hidden pr-40"><h6>About Exercism</h6><p>Learn about our organisation</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/about/impact"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-textColor6" src="./Exercism_files/report-23dfcc2b358696fb11fa6c7797edfc0d41ae0803.svg"><div class="overflow-hidden pr-40"><h6>Our Impact</h6><p>Explore what we've achieved</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/insiders"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-none" src="./Exercism_files/insiders-d0418ec8b59d21a8852f7326404fa20b2d21785d.svg"><div class="overflow-hidden pr-40"><h6>Insiders</h6><p>Our way of saying thank you</p></div></div></a></li><li><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" target="_blank" rel="noreferrer" href="https://swag.exercism.org/"><div class="nav-dropdown-element" role="menuitem"><img alt="" class="c-icon filter-textColor6" src="./Exercism_files/swag-0760af62a6d6604449903cb919774da3e1d3b4f6.svg"><div class="overflow-hidden pr-40"><h6>SWAG</h6><p>Hoodies, stickers &amp; more</p></div><img alt="The link opens in a new window or tab" class="c-icon external-icon filter-textColor6" src="./Exercism_files/external-link-49b422d65245eaf4cb29a072e85d73b5c6b8aa04.svg"></div></a></li></ul></div><div class="arrow"></div></li><li class="nav-element insiders"><a tabindex="0" role="none" class="nav-element-link nav-element-focusable" href="https://exercism.org/insiders"><span tabindex="-1" role="none" class="nav-element-label ">Insiders</span></a><div class="nav-element-dropdown only-view" style="--dropdown-offset: -150px;"><div class="nav-dropdown-view"><div class="nav-dropdown-view-content"><a href="https://exercism.org/insiders"><div class="bg-darkBlueViolet flex flex-col px-24 pt-20 pb-24 theme-dark">
+<img alt="" class="c-icon w-[48px] h-[48px] mb-16" src="./Exercism_files/insiders-d0418ec8b59d21a8852f7326404fa20b2d21785d.svg">
+<h2 class="text-h3 mb-2 !text-white">Exercism Insiders</h2>
+<p class="text-h6 mb-8 !text-white">Exercism needs your help to survive &amp; thrive!</p>
+<div class="text-p-base mb-12 color-[#cbc9d9] max-w-[370px]">
+Donate to Exercism and get behind-the-scenes access and bonus features like
+<strong class="color-[#f0f3f9]">Dark Mode, ChatGPT integration, extra mentoring slots, exclusive badges</strong>,
+and more.
+</div>
+<div class="btn-s btn-primary">Learn More</div>
+<div class="text-p-small border-t-1 border-borderColor5 mt-16 pt-16 color-[#cbc9d9] max-w-[370px]">
+Exercism is a registered not-for-profit. All donations are spent on running and improving the platform.
+</div>
+</div>
+</a></div></div></div><div class="arrow"></div></li><div class="c-react-component c-react-wrapper-common-theme-toggle-button" data-react-id="common-theme-toggle-button" data-react-data="{&quot;links&quot;:{&quot;update&quot;:&quot;https://exercism.org/api/v2/settings/user_preferences&quot;,&quot;insiders&quot;:&quot;/insiders&quot;},&quot;disabled&quot;:true,&quot;default_theme&quot;:null}" data-react-hydrate="false"><div class="ml-24" aria-expanded="false"><button disabled="" class="toggle-button"><label class="switch"><input type="checkbox" readonly=""><span class="slider round"></span></label></button></div></div></ul></nav><div class="user-section"><a class="new-badge" href="https://exercism.org/journey/badges#journey-content"></a><div class="c-react-component c-react-wrapper-dropdowns-notifications" data-react-id="dropdowns-notifications" data-react-data="{&quot;endpoint&quot;:&quot;https://exercism.org/api/v2/notifications?for_header=true&quot;}" data-react-hydrate="false"><button class="c-notification --single-digit" aria-label="Open notifications" aria-controls="c32fc3ee-827d-4e42-9b19-c56650f944aa" aria-haspopup="true"><img src="./Exercism_files/notifications-2e6c2d672e24a543905250aefc304f77e88718ff.svg" alt="You have 3 notifications" class="c-icon"><div class="--count">3</div></button></div><div class="c-react-component c-react-wrapper-dropdowns-reputation" data-react-id="dropdowns-reputation" data-react-data="{&quot;reputation&quot;:&quot;0&quot;,&quot;is_seen&quot;:true,&quot;endpoint&quot;:&quot;https://exercism.org/api/v2/reputation?for_header=true&quot;}" data-react-hydrate="false"><div class="flex gap-8"><button class="c-primary-reputation" aria-label="0 reputation" aria-controls="0597c423-3317-4065-a14a-f959a4ef2d8b" aria-haspopup="true"><img src="./Exercism_files/reputation-5b5938e36519908ac61075db3b9826307a0f907a.svg" alt="Reputation" class="c-icon"><span>0</span><div class="--notification "></div></button></div></div><div class="c-react-component c-react-wrapper-dropdowns-dropdown" data-react-id="dropdowns-dropdown" data-react-data="{&quot;menu_button&quot;:{&quot;label&quot;:&quot;Button to open the profile menu&quot;,&quot;className&quot;:&quot;user-menu&quot;,&quot;html&quot;:&quot;\u003cdiv class=\&quot;c-avatar\&quot; style=\&quot;background-image:url(\u0026quot;https://assets.exercism.org/avatars/1895705/0\u0026quot;)\&quot;\u003e\u003cimg alt=\&quot;Uploaded avatar of MylesJMoore\&quot; class=\&quot;sr-only\&quot; src=\&quot;https://assets.exercism.org/avatars/1895705/0\&quot; /\u003e\u003c/div\u003e\u003cimg alt=\&quot;Profile Menu\&quot; class=\&quot;c-icon\&quot; src=\&quot;https://assets.exercism.org/assets/icons/more-vertical-371ef6f2314bb5dbe5d3892a7ee098c6ebc3cf30.svg\&quot; /\u003e&quot;},&quot;menu_items&quot;:[{&quot;html&quot;:&quot;\u003ca href=\&quot;/profiles/intro\&quot;\u003e\u003cdiv class=\&quot;c-avatar\&quot; style=\&quot;background-image:url(\u0026quot;https://assets.exercism.org/avatars/1895705/0\u0026quot;)\&quot;\u003e\u003cimg alt=\&quot;Your uploaded avatar\&quot; class=\&quot;sr-only\&quot; src=\&quot;https://assets.exercism.org/avatars/1895705/0\&quot; /\u003e\u003c/div\u003e\u003cdiv class=\&quot;info\&quot;\u003e\u003cdiv class=\&quot;name\&quot;\u003eMylesJMoore\u003c/div\u003e\u003cdiv class=\&quot;handle flex\&quot;\u003e\u003cspan\u003e@\u003c/span\u003e\u003cspan class=\&quot;inline-flex items-center leading-150\&quot;\u003eMylesJMoore\u003c/span\u003e\u003c/div\u003e\u003c/div\u003e\u003cimg alt=\&quot;Open public profile\&quot; class=\&quot;c-icon\&quot; src=\&quot;https://assets.exercism.org/assets/icons/external-link-49b422d65245eaf4cb29a072e85d73b5c6b8aa04.svg\&quot; /\u003e\u003c/a\u003e&quot;,&quot;className&quot;:&quot;profile&quot;},{&quot;html&quot;:&quot;\u003cdiv class=\&quot;c-primary-reputation\&quot; aria-label=\&quot;0 reputation\&quot;\u003e\u003cimg alt=\&quot;Reputation\&quot; class=\&quot;c-icon\&quot; src=\&quot;https://assets.exercism.org/assets/icons/reputation-5b5938e36519908ac61075db3b9826307a0f907a.svg\&quot; /\u003e\u003cspan\u003e0\u003c/span\u003e\u003c/div\u003e&quot;,&quot;className&quot;:&quot;reputation&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/dashboard\&quot;\u003eDashboard\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/tracks\&quot;\u003eTracks\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/mentoring/inbox\&quot;\u003eMentoring\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/community\&quot;\u003eCommunity\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/insiders\&quot;\u003eInsiders 💜\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/donate\&quot;\u003eDonate\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link donate&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/profiles/intro\&quot;\u003ePublic Profile\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/journey\&quot;\u003eYour Journey\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/settings\&quot;\u003eSettings\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;},{&quot;html&quot;:&quot;\u003cform class=\&quot;button_to\&quot; method=\&quot;post\&quot; action=\&quot;/users/sign_out\&quot;\u003e\u003cinput type=\&quot;hidden\&quot; name=\&quot;_method\&quot; value=\&quot;delete\&quot; autocomplete=\&quot;off\&quot; /\u003e\u003cbutton type=\&quot;submit\&quot;\u003eSign out\u003c/button\u003e\u003cinput type=\&quot;hidden\&quot; name=\&quot;authenticity_token\&quot; value=\&quot;RE_bNCDlvemCcqHPndpJpm8tBfn_fR0QPlrKBbI0r-x1_5cSrYDWCI1ukwyBvgByztzjyywKgvrrP3XdZGoSkw\&quot; autocomplete=\&quot;off\&quot; /\u003e\u003c/form\u003e&quot;,&quot;className&quot;:&quot;opt&quot;}]}" data-react-hydrate="false"><button class="user-menu " aria-label="Button to open the profile menu" aria-controls="3f40dbce-a81e-468b-8db4-af4d5d370c61" aria-haspopup="true"><div class="c-avatar" style="background-image:url(&quot;https://assets.exercism.org/avatars/1895705/0&quot;)"><img alt="Uploaded avatar of MylesJMoore" class="sr-only" src="./Exercism_files/0"></div><img alt="Profile Menu" class="c-icon" src="./Exercism_files/more-vertical-371ef6f2314bb5dbe5d3892a7ee098c6ebc3cf30.svg"></button></div></div></div></header>
+<turbo-frame data-turbo-action="advance" id="tf-main"><link rel="stylesheet" href="./Exercism_files/editor-3fa9b68fc65a5d891b1bee5a667bddc82ce50daa.css" data-turbo-track="reload"><link rel="stylesheet" href="./Exercism_files/track-b0c68b5ba018c5568c607cce3b7b839ab236d2a7.css" data-turbo-track="reload">
+<div class="c-react-component c-react-wrapper-editor" data-react-id="editor" data-react-data="{&quot;default_submissions&quot;:[{&quot;uuid&quot;:&quot;1c831c703fe34f749e869ffba22b69a1&quot;,&quot;tests_status&quot;:&quot;failed&quot;,&quot;links&quot;:{&quot;cancel&quot;:&quot;https://exercism.org/api/v2/solutions/c6a3b1d75f8b40c1b328918913b071e6/submissions/1c831c703fe34f749e869ffba22b69a1/test_run/cancel&quot;,&quot;submit&quot;:&quot;https://exercism.org/api/v2/solutions/c6a3b1d75f8b40c1b328918913b071e6/iterations?submission_uuid=1c831c703fe34f749e869ffba22b69a1&quot;,&quot;test_run&quot;:&quot;https://exercism.org/api/v2/solutions/c6a3b1d75f8b40c1b328918913b071e6/submissions/1c831c703fe34f749e869ffba22b69a1/test_run&quot;,&quot;ai_help&quot;:&quot;/api/v2/solutions/c6a3b1d75f8b40c1b328918913b071e6/submissions/1c831c703fe34f749e869ffba22b69a1/ai_help&quot;,&quot;initial_files&quot;:&quot;https://exercism.org/api/v2/solutions/c6a3b1d75f8b40c1b328918913b071e6/initial_files&quot;,&quot;last_iteration_files&quot;:&quot;https://exercism.org/api/v2/solutions/c6a3b1d75f8b40c1b328918913b071e6/last_iteration_files&quot;}}],&quot;default_files&quot;:[{&quot;filename&quot;:&quot;enchantments.js&quot;,&quot;type&quot;:&quot;solution&quot;,&quot;content&quot;:&quot;// @ts-check\n\n/**\n * Retrieve card from cards array at the 0-based position\n *\n * @param {number[]} cards\n * @param {number} position\n *\n * @returns {number} the card\n */\nexport function getItem(cards, position) {\n  return cards[position];\n}\n\n/**\n * Exchange card with replacementCard at the 0-based position\n *\n * @param {number[]} cards\n * @param {number} position\n * @param {number} replacementCard\n *\n * @returns {number[]} the cards with the change applied\n */\nexport function setItem(cards, position, replacementCard) {\n  cards[position] = replacementCard;\n  return cards;\n}\n\n/**\n * Insert newCard at the end of the cards array\n *\n * @param {number[]} cards\n * @param {number} newCard\n *\n * @returns {number[]} the cards with the newCard applied\n */\nexport function insertItemAtTop(cards, newCard) {\n  return cards.push(newCard);\n}\n\n/**\n * Remove the card at the 0-based position\n *\n * @param {number[]} cards\n * @param {number} position\n *\n * @returns {number[]} the cards without the removed card\n */\nexport function removeItem(cards, position) {\n  return cards.splice(position,position);\n}\n\n/**\n * Remove card from the end of the cards array\n *\n * @param {number[]} cards\n *\n * @returns {number[]} the cards without the removed card\n */\nexport function removeItemFromTop(cards) {\n  throw new Error(&#39;Implement the removeItemFromTop function&#39;);\n}\n\n/**\n * Insert newCard at beginning of the cards array\n *\n * @param {number[]} cards\n * @param {number} newCard\n *\n * @returns {number[]} the cards including the new card\n */\nexport function insertItemAtBottom(cards, newCard) {\n  throw new Error(&#39;Implement the insertItemAtBottom function&#39;);\n}\n\n/**\n * Remove card from the beginning of the cards\n *\n * @param {number[]} cards\n *\n * @returns {number[]} the cards without the removed card\n */\nexport function removeItemAtBottom(cards) {\n  throw new Error(&#39;Implement the removeItemAtBottom function&#39;);\n}\n\n/**\n * Compare the number of cards with the given stackSize\n *\n * @param {number[]} cards\n * @param {number} stackSize\n *\n * @returns {boolean} true if there are exactly stackSize number of cards, false otherwise\n */\nexport function checkSizeOfStack(cards, stackSize) {\n  throw new Error(&#39;Implement the checkSizeOfStack function&#39;);\n}\n&quot;}],&quot;insider&quot;:false,&quot;chatgpt_usage&quot;:{&quot;3.5&quot;:0,&quot;4.0&quot;:0},&quot;default_settings&quot;:{&quot;tab_size&quot;:2,&quot;use_soft_tabs&quot;:true},&quot;autosave&quot;:{&quot;key&quot;:&quot;c6a3b1d75f8b40c1b328918913b071e6&quot;,&quot;save_interval&quot;:500},&quot;help&quot;:{&quot;html&quot;:&quot;\u003cp\u003eTo get help if you&#39;re having trouble, you can use one of the following resources:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003ca href=\&quot;https://www.reddit.com/r/javascript\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003e/r/javascript\u003c/a\u003e is the Javascript subreddit.\u003c/li\u003e\n\u003cli\u003e\n\u003ca href=\&quot;https://stackoverflow.com/questions/tagged/javascript+exercism\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003eStackOverflow\u003c/a\u003e can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.\u003c/li\u003e\n\u003cli\u003e\n\u003ca href=\&quot;https://github.com/exercism/javascript/issues\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003eGithub issue tracker\u003c/a\u003e is where we track our development and maintainance of Javascript exercises in exercism. But if none of the above links help you, feel free to post an issue here.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eShould those resources not suffice, check the following pages:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eThe \u003ca href=\&quot;https://exercism.org/docs/tracks/javascript\&quot;\u003eJavaScript track&#39;s documentation\u003c/a\u003e\n\u003c/li\u003e\n\u003cli\u003eThe \u003ca href=\&quot;https://forum.exercism.org/c/programming/javascript\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003eJavaScript track&#39;s programming category on the forum\u003c/a\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003ca href=\&quot;https://forum.exercism.org/c/programming/5\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003eExercism&#39;s programming category on the forum\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eThe \u003ca href=\&quot;https://exercism.org/docs/using/faqs\&quot;\u003eFrequently Asked Questions\u003c/a\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n&quot;},&quot;panels&quot;:{&quot;instructions&quot;:{&quot;introduction&quot;:&quot;\u003cp\u003eIn JavaScript, an array is a list-like structure with no fixed length which can hold any type of primitives or objects, even mixed types.\u003c/p\u003e\n\u003cp\u003eTo create an array, add elements between square brackets \u003ccode\u003e[]\u003c/code\u003e.\nTo read from the array, put the index in square brackets \u003ccode\u003e[]\u003c/code\u003e after the identifier.\nThe indices of an array start at zero.\u003c/p\u003e\n\u003cp\u003eFor example:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst numbers = [1, &#39;two&#39;, 3, &#39;four&#39;];\nnumbers[2];\n// =\u0026gt; 3\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eTo retrieve the number of elements that are in an array, use the \u003ccode\u003elength\u003c/code\u003e property:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst numbers = [1, &#39;two&#39;, 3, &#39;four&#39;];\nnumbers.length;\n// =\u0026gt; 4\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eTo change an element in the array, you assign a value at the index:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst numbers = [1, &#39;two&#39;, 3, &#39;four&#39;];\nnumbers[0] = &#39;one&#39;;\nnumbers;\n// =\u0026gt; [&#39;one&#39;, &#39;two&#39;, 3, &#39;four&#39;]\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\&quot;h-methods\&quot;\u003eMethods\u003c/h3\u003e\n\u003cp\u003eSome of the \u003ca href=\&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003emethods\u003c/a\u003e that are available on every Array object can be used to add or remove from the array.\nHere are a few to consider when working on this exercise:\u003c/p\u003e\n\u003ch4 id=\&quot;h-push\&quot;\u003epush\u003c/h4\u003e\n\u003cblockquote\u003e\n\u003cp\u003eThe \u003ccode\u003epush()\u003c/code\u003e method adds one or more elements to the end of an array and returns the new length of the array.\u003csup class=\&quot;footnote-ref\&quot;\u003e\u003ca href=\&quot;#fn1\&quot; id=\&quot;fnref1\&quot;\u003e1\u003c/a\u003e\u003c/sup\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst numbers = [1, &#39;two&#39;, 3, &#39;four&#39;];\nnumbers.push(5); // =\u0026gt; 5\nnumbers;\n// =\u0026gt; [1, &#39;two&#39;, 3, &#39;four&#39;, 5]\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\&quot;h-pop\&quot;\u003epop\u003c/h4\u003e\n\u003cblockquote\u003e\n\u003cp\u003eThe \u003ccode\u003epop()\u003c/code\u003e method removes the last element from an array and returns that element.\nThis method changes the length of the array.\u003csup class=\&quot;footnote-ref\&quot;\u003e\u003ca href=\&quot;#fn2\&quot; id=\&quot;fnref2\&quot;\u003e2\u003c/a\u003e\u003c/sup\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst numbers = [1, &#39;two&#39;, 3, &#39;four&#39;];\nnumbers.pop(); // =\u0026gt; four\nnumbers;\n// =\u0026gt; [1, &#39;two&#39;, 3]\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\&quot;h-shift\&quot;\u003eshift\u003c/h4\u003e\n\u003cblockquote\u003e\n\u003cp\u003eThe \u003ccode\u003eshift()\u003c/code\u003e method removes the first element from an array and returns that removed element.\nThis method changes the length of the array.\u003csup class=\&quot;footnote-ref\&quot;\u003e\u003ca href=\&quot;#fn3\&quot; id=\&quot;fnref3\&quot;\u003e3\u003c/a\u003e\u003c/sup\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst numbers = [1, &#39;two&#39;, 3, &#39;four&#39;];\nnumbers.shift(); // =\u0026gt; 1\nnumbers;\n// =\u0026gt; [&#39;two&#39;, 3, &#39;four&#39;]\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\&quot;h-unshift\&quot;\u003eunshift\u003c/h4\u003e\n\u003cblockquote\u003e\n\u003cp\u003eThe unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.\u003csup class=\&quot;footnote-ref\&quot;\u003e\u003ca href=\&quot;#fn4\&quot; id=\&quot;fnref4\&quot;\u003e4\u003c/a\u003e\u003c/sup\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst numbers = [1, &#39;two&#39;, 3, &#39;four&#39;];\nnumbers.unshift(&#39;one&#39;); // =\u0026gt; 5\nnumbers;\n// =\u0026gt; [&#39;one&#39;, 1, &#39;two&#39;, 3, &#39;four&#39;]\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch4 id=\&quot;h-splice\&quot;\u003esplice\u003c/h4\u003e\n\u003cblockquote\u003e\n\u003cp\u003eThe splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.\nThis method returns an array containing the deleted elements.\u003csup class=\&quot;footnote-ref\&quot;\u003e\u003ca href=\&quot;#fn5\&quot; id=\&quot;fnref5\&quot;\u003e5\u003c/a\u003e\u003c/sup\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst numbers = [1, &#39;two&#39;, 3, &#39;four&#39;];\nnumbers.splice(2, 1, &#39;one&#39;); // =\u0026gt; [3]\nnumbers;\n// =\u0026gt; [1, &#39;two&#39;, &#39;one&#39;, &#39;four&#39;]\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003csection class=\&quot;footnotes\&quot;\u003e\n\u003col\u003e\n\u003cli id=\&quot;fn1\&quot;\u003e\n\u003cp\u003e\u003ccode\u003epush\u003c/code\u003e, MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push (referenced September 29, 2021) \u003ca href=\&quot;#fnref1\&quot; class=\&quot;footnote-backref\&quot;\u003e↩\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli id=\&quot;fn2\&quot;\u003e\n\u003cp\u003e\u003ccode\u003epop\u003c/code\u003e, MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop (referenced September 29, 2021) \u003ca href=\&quot;#fnref2\&quot; class=\&quot;footnote-backref\&quot;\u003e↩\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli id=\&quot;fn3\&quot;\u003e\n\u003cp\u003e\u003ccode\u003eshift\u003c/code\u003e, MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift (referenced September 29, 2021) \u003ca href=\&quot;#fnref3\&quot; class=\&quot;footnote-backref\&quot;\u003e↩\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli id=\&quot;fn4\&quot;\u003e\n\u003cp\u003e\u003ccode\u003eunshift\u003c/code\u003e, MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift (referenced September 29, 2021) \u003ca href=\&quot;#fnref4\&quot; class=\&quot;footnote-backref\&quot;\u003e↩\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli id=\&quot;fn5\&quot;\u003e\n\u003cp\u003e\u003ccode\u003esplice\u003c/code\u003e, MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice (referenced September 29, 2021) \u003ca href=\&quot;#fnref5\&quot; class=\&quot;footnote-backref\&quot;\u003e↩\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003c/section\u003e\n&quot;,&quot;assignment&quot;:{&quot;overview&quot;:&quot;\u003cp\u003eAs a magician-to-be, Elyse needs to practice some basics. She has a stack of cards that she wants to manipulate.\u003c/p\u003e\n\u003cp\u003eTo make things a bit easier she only uses the cards 1 to 10 so her stack of cards can be represented by an array of\nnumbers. The position of a certain card corresponds to the index in the array. That means position 0 refers to the first\ncard, position 1 to the second card etc.\u003c/p\u003e\n\n\u003cdiv class=\&quot;c-textblock-note\&quot;\u003e\n\u003cdiv class=\&quot;c-textblock-header\&quot;\u003eNote\u003c/div\u003e\n\u003cdiv class=\&quot;c-textblock-content\&quot;\u003e\n\u003cp\u003eAll functions should update the array of cards and then return the modified array - a common way of working known as the Builder pattern, which allows you to nicely daisy-chain functions together.\u003c/p\u003e\n\u003c/div\u003e\n\u003c/div\u003e\n\n&quot;,&quot;general_hints&quot;:[],&quot;tasks&quot;:[{&quot;id&quot;:1,&quot;title&quot;:&quot;Retrieve a card from a stack&quot;,&quot;text&quot;:&quot;\u003cp\u003eTo pick a card, return the card at index \u003ccode\u003eposition\u003c/code\u003e from the given stack.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst position = 2;\ngetItem([1, 2, 4, 1], position);\n// =\u0026gt; 4\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eArray indices start at \u003ccode\u003e0\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003e\n\u003ca href=\&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Accessing_array_elements\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003eThis\npage\u003c/a\u003e\nhas more information on how to access array elements.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:2,&quot;title&quot;:&quot;Exchange a card in the stack&quot;,&quot;text&quot;:&quot;\u003cp\u003ePerform some sleight of hand and exchange the card at index \u003ccode\u003eposition\u003c/code\u003e with the replacement card provided. Return the\nadjusted stack.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst position = 2;\nconst replacementCard = 6;\nsetItem([1, 2, 4, 1], position, replacementCard);\n// =\u0026gt; [1, 2, 6, 1]\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eThe array is a mutable structure, you can change its content anytime.\u003c/li\u003e\n\u003cli\u003eYou can find an example \u003ca href=\&quot;https://www.w3schools.com/js/js_arrays.asp\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003ehere\u003c/a\u003e, inside the &#39;Changing an Array Element&#39;\nsection.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:3,&quot;title&quot;:&quot;Insert a card at the top of the stack&quot;,&quot;text&quot;:&quot;\u003cp\u003eMake a card appear by inserting a new card at the top of the stack. Return the adjusted stack.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst newCard = 8;\ninsertItemAtTop([5, 9, 7, 1], newCard);\n// =\u0026gt; [5, 9, 7, 1, 8]\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eThere is a \u003ca href=\&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003ebuilt-in\u003c/a\u003e\nmethod to add a new value to the end of the array.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:4,&quot;title&quot;:&quot;Remove a card from the stack&quot;,&quot;text&quot;:&quot;\u003cp\u003eMake a card disappear by removing the card at the given \u003ccode\u003eposition\u003c/code\u003e from the stack. Return the adjusted stack.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst position = 2;\nremoveItem([3, 2, 6, 4, 8], position);\n// =\u0026gt; [3, 2, 4, 8]\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eThere is a \u003ca href=\&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003ebuilt-in\u003c/a\u003e\nmethod that, among other use cases, can be used to remove elements starting at a certain position.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:5,&quot;title&quot;:&quot;Remove the top card from the stack&quot;,&quot;text&quot;:&quot;\u003cp\u003eMake a card disappear by removing the card at the top of the stack. Return the adjusted stack.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003eremoveItemFromTop([3, 2, 6, 4, 8]);\n// =\u0026gt; [3, 2, 6, 4]\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eThere is a \u003ca href=\&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003ebuilt-in\u003c/a\u003e\nmethod to remove the last element from the array.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:6,&quot;title&quot;:&quot;Insert a card at the bottom of the stack&quot;,&quot;text&quot;:&quot;\u003cp\u003eMake a card appear by inserting a new card at the bottom of the stack. Return the adjusted stack.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst newCard = 8;\ninsertItemAtBottom([5, 9, 7, 1], newCard);\n// =\u0026gt; [8, 5, 9, 7, 1]\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eThere is a\n\u003ca href=\&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003ebuilt-in\u003c/a\u003e method to\nadd a new value to the beginning of the array.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:7,&quot;title&quot;:&quot;Remove a card from the bottom of the stack&quot;,&quot;text&quot;:&quot;\u003cp\u003eMake a card disappear by removing the card at the bottom of the stack. Return the adjusted stack.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003eremoveItemAtBottom([8, 5, 9, 7, 1]);\n// =\u0026gt; [5, 9, 7, 1]\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eThere is a \u003ca href=\&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003ebuilt-in\u003c/a\u003e\nmethod to remove the first element from the array.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]},{&quot;id&quot;:8,&quot;title&quot;:&quot;Check the size of the stack&quot;,&quot;text&quot;:&quot;\u003cp\u003eCheck whether the size of the stack is equal to \u003ccode\u003estackSize\u003c/code\u003e or not.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econst stackSize = 4;\ncheckSizeOfStack([3, 2, 6, 4, 8], stackSize);\n// =\u0026gt; false\n\u003c/code\u003e\u003c/pre\u003e\n&quot;,&quot;hints&quot;:[&quot;\u003cul\u003e\n\u003cli\u003eArrays have a\n\u003ca href=\&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length\&quot; target=\&quot;_blank\&quot; rel=\&quot;noreferrer\&quot;\u003eproperty\u003c/a\u003e to\nretrieve their length.\u003c/li\u003e\n\u003c/ul\u003e\n&quot;]}]},&quot;debugging_instructions&quot;:&quot;\u003cp\u003eWhen a test fails, a message is displayed describing what went wrong and for which input. You can also use the fact that any \u003ccode\u003econsole\u003c/code\u003e output will be shown too. You can write to the console using:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\&quot;language-javascript\&quot;\u003econsole.log(&#39;Debug message&#39;);\n\u003c/code\u003e\u003c/pre\u003e\n&quot;},&quot;tests&quot;:null,&quot;results&quot;:{&quot;test_runner&quot;:{&quot;average_test_duration&quot;:6}},&quot;ai_help&quot;:null,&quot;chatgpt_usage&quot;:{&quot;3.5&quot;:0,&quot;4.0&quot;:0}},&quot;exercise&quot;:{&quot;title&quot;:&quot;Elyses Enchantments&quot;,&quot;slug&quot;:&quot;elyses-enchantments&quot;,&quot;deep_dive_youtube_id&quot;:null,&quot;deep_dive_blurb&quot;:null},&quot;solution&quot;:{&quot;uuid&quot;:&quot;c6a3b1d75f8b40c1b328918913b071e6&quot;},&quot;request&quot;:{&quot;endpoint&quot;:&quot;/api/v2/solutions/c6a3b1d75f8b40c1b328918913b071e6/iterations/latest?sideload%5B%5D=automated_feedback&quot;,&quot;options&quot;:{&quot;initial_data&quot;:{&quot;iteration&quot;:null}}},&quot;mentoring_status&quot;:&quot;none&quot;,&quot;track_objectives&quot;:&quot;&quot;,&quot;has_available_mentoring_slot&quot;:true,&quot;links&quot;:{&quot;run_tests&quot;:&quot;https://exercism.org/api/v2/solutions/c6a3b1d75f8b40c1b328918913b071e6/submissions&quot;,&quot;back&quot;:&quot;/tracks/javascript/exercises/elyses-enchantments&quot;,&quot;automated_feedback_info&quot;:&quot;/docs/using/feedback/automated&quot;,&quot;mentor_discussions&quot;:&quot;/tracks/javascript/exercises/elyses-enchantments/mentor_discussions&quot;,&quot;mentoring_request&quot;:&quot;/tracks/javascript/exercises/elyses-enchantments/mentor_request&quot;,&quot;create_mentor_request&quot;:&quot;/api/v2/solutions/c6a3b1d75f8b40c1b328918913b071e6/mentor_requests&quot;,&quot;discord_redirect_path&quot;:&quot;/r/discord&quot;,&quot;forum_redirect_path&quot;:&quot;/r/forum&quot;,&quot;mark_video_as_seen_endpoint&quot;:&quot;/api/watched_videos?context=editor\u0026video_provider=youtube&quot;},&quot;iteration&quot;:null,&quot;discussion&quot;:null,&quot;track&quot;:{&quot;title&quot;:&quot;JavaScript&quot;,&quot;slug&quot;:&quot;javascript&quot;,&quot;icon_url&quot;:&quot;https://assets.exercism.org/tracks/javascript.svg&quot;,&quot;median_wait_time&quot;:43116},&quot;show_deep_dive_video&quot;:false}" data-react-hydrate="false"><div id="page-editor"><div class="header"><a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments" class="close-btn"><img src="./Exercism_files/arrow-left-4fedf4dce89347e9605602fd3ae9d14be590e735.svg" alt="" class="c-icon">Back to Exercise</a><div class="title"><div class="track">JavaScript</div><div class="divider">/</div><div class="exercise">Elyses Enchantments</div></div><div class="options"><button class="settings-btn" aria-controls="6f39835b-31f5-4577-b85f-b3fb69d81041" aria-haspopup="true"><img src="./Exercism_files/settings-f325518f0f05f6549f9585e2e89d694ba1686050.svg" alt="Settings" class="c-icon"></button><button aria-controls="1901f9a5-be1a-4892-8738-f18f97535c00" aria-haspopup="true" class="more-btn"><img src="./Exercism_files/more-horizontal-3d03736796a8555be89dea121bbb1721f6703001.svg" alt="Open more options" class="c-icon"></button></div></div><div class="c-split-pane"><div class="--split-lhs" style="min-width: 100px;"><div class="c-iteration-pane"><div class="tabs"><button class="c-tab  selected" role="tab" aria-selected="true" aria-controls="panel-enchantments.js" id="tab-enchantments.js" tabindex="0">enchantments.js</button></div><div id="panel-enchantments.js" role="tabpanel" aria-labelledby="tab-enchantments.js" tabindex="0" class="--tab-panel"><div class="editor"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div class="cm-panels cm-panels-top" style="top: 0px;"><div class="cm-a11y-panel cm-panel" aria-live="assertive" aria-atomic="true"></div></div><div class="cm-announced" aria-live="polite"><div>Selection deleted</div></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 2524px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">999</div><div class="cm-gutterElement" style="height: 24px; margin-top: 240px;">11</div><div class="cm-gutterElement" style="height: 24px;">12</div><div class="cm-gutterElement" style="height: 24px;">13</div><div class="cm-gutterElement" style="height: 24px;">14</div><div class="cm-gutterElement" style="height: 24px;">15</div><div class="cm-gutterElement" style="height: 24px;">16</div><div class="cm-gutterElement" style="height: 24px;">17</div><div class="cm-gutterElement" style="height: 24px;">18</div><div class="cm-gutterElement" style="height: 24px;">19</div><div class="cm-gutterElement" style="height: 24px;">20</div><div class="cm-gutterElement" style="height: 24px;">21</div><div class="cm-gutterElement" style="height: 24px;">22</div><div class="cm-gutterElement" style="height: 24px;">23</div><div class="cm-gutterElement" style="height: 24px;">24</div><div class="cm-gutterElement" style="height: 24px;">25</div><div class="cm-gutterElement" style="height: 24px;">26</div><div class="cm-gutterElement" style="height: 24px;">27</div><div class="cm-gutterElement" style="height: 24px;">28</div><div class="cm-gutterElement" style="height: 24px;">29</div><div class="cm-gutterElement" style="height: 24px;">30</div><div class="cm-gutterElement" style="height: 24px;">31</div><div class="cm-gutterElement" style="height: 24px;">32</div><div class="cm-gutterElement" style="height: 24px;">33</div><div class="cm-gutterElement" style="height: 24px;">34</div><div class="cm-gutterElement" style="height: 24px;">35</div><div class="cm-gutterElement" style="height: 24px;">36</div><div class="cm-gutterElement" style="height: 24px;">37</div><div class="cm-gutterElement" style="height: 24px;">38</div><div class="cm-gutterElement" style="height: 24px;">39</div><div class="cm-gutterElement" style="height: 24px;">40</div><div class="cm-gutterElement" style="height: 24px;">41</div><div class="cm-gutterElement" style="height: 24px;">42</div><div class="cm-gutterElement" style="height: 24px;">43</div><div class="cm-gutterElement" style="height: 24px;">44</div><div class="cm-gutterElement" style="height: 24px;">45</div><div class="cm-gutterElement" style="height: 24px;">46</div><div class="cm-gutterElement" style="height: 24px;">47</div><div class="cm-gutterElement" style="height: 24px;">48</div><div class="cm-gutterElement" style="height: 24px;">49</div><div class="cm-gutterElement" style="height: 24px;">50</div><div class="cm-gutterElement" style="height: 24px;">51</div><div class="cm-gutterElement" style="height: 24px;">52</div><div class="cm-gutterElement" style="height: 24px;">53</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 24px;">54</div><div class="cm-gutterElement" style="height: 24px;">55</div><div class="cm-gutterElement" style="height: 24px;">56</div><div class="cm-gutterElement" style="height: 24px;">57</div><div class="cm-gutterElement" style="height: 24px;">58</div><div class="cm-gutterElement" style="height: 24px;">59</div><div class="cm-gutterElement" style="height: 24px;">60</div><div class="cm-gutterElement" style="height: 24px;">61</div><div class="cm-gutterElement" style="height: 24px;">62</div><div class="cm-gutterElement" style="height: 24px;">63</div><div class="cm-gutterElement" style="height: 24px;">64</div><div class="cm-gutterElement" style="height: 24px;">65</div><div class="cm-gutterElement" style="height: 24px;">66</div><div class="cm-gutterElement" style="height: 24px;">67</div><div class="cm-gutterElement" style="height: 24px;">68</div><div class="cm-gutterElement" style="height: 24px;">69</div><div class="cm-gutterElement" style="height: 24px;">70</div><div class="cm-gutterElement" style="height: 24px;">71</div><div class="cm-gutterElement" style="height: 24px;">72</div><div class="cm-gutterElement" style="height: 24px;">73</div><div class="cm-gutterElement" style="height: 24px;">74</div><div class="cm-gutterElement" style="height: 24px;">75</div><div class="cm-gutterElement" style="height: 24px;">76</div><div class="cm-gutterElement" style="height: 24px;">77</div><div class="cm-gutterElement" style="height: 24px;">78</div><div class="cm-gutterElement" style="height: 24px;">79</div><div class="cm-gutterElement" style="height: 24px;">80</div><div class="cm-gutterElement" style="height: 24px;">81</div><div class="cm-gutterElement" style="height: 24px;">82</div><div class="cm-gutterElement" style="height: 24px;">83</div><div class="cm-gutterElement" style="height: 24px;">84</div><div class="cm-gutterElement" style="height: 24px;">85</div><div class="cm-gutterElement" style="height: 24px;">86</div><div class="cm-gutterElement" style="height: 24px;">87</div><div class="cm-gutterElement" style="height: 24px;">88</div><div class="cm-gutterElement" style="height: 24px;">89</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 240px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 72px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 192px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 96px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 168px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 96px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 168px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 24px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 24px;"></div><div class="cm-gutterElement" style="height: 24px; margin-top: 120px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 144px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 72px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 168px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 72px;"><span title="Fold line">⌄</span></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="false" style="tab-size: 4;" class="cm-content cm-lineWrapping" role="textbox" aria-multiline="true" aria-autocomplete="list" data-language="javascript"><div class="cm-gap" style="height: 240px;"></div><div class="cm-line"><span class="ͼb">export</span> <span class="ͼb">function</span> <span class="ͼg">getItem</span>(<span class="ͼg">cards</span>, <span class="ͼg">position</span>) {</div><div class="cm-line">  <span class="ͼb">return</span> cards[position];</div><div class="cm-line">}</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼm">/**</span></div><div class="cm-line"><span class="ͼm"> * Exchange card with replacementCard at the 0-based position</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @param {number[]} cards</span></div><div class="cm-line"><span class="ͼm"> * @param {number} position</span></div><div class="cm-line"><span class="ͼm"> * @param {number} replacementCard</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @returns {number[]} the cards with the change applied</span></div><div class="cm-line"><span class="ͼm"> */</span></div><div class="cm-line"><span class="ͼb">export</span> <span class="ͼb">function</span> <span class="ͼg">setItem</span>(<span class="ͼg">cards</span>, <span class="ͼg">position</span>, <span class="ͼg">replacementCard</span>) {</div><div class="cm-line">  cards[position] = replacementCard;</div><div class="cm-line">  <span class="ͼb">return</span> cards;</div><div class="cm-line">}</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼm">/**</span></div><div class="cm-line"><span class="ͼm"> * Insert newCard at the end of the cards array</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @param {number[]} cards</span></div><div class="cm-line"><span class="ͼm"> * @param {number} newCard</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @returns {number[]} the cards with the newCard applied</span></div><div class="cm-line"><span class="ͼm"> */</span></div><div class="cm-line"><span class="ͼb">export</span> <span class="ͼb">function</span> <span class="ͼg">insertItemAtTop</span>(<span class="ͼg">cards</span>, <span class="ͼg">newCard</span>) {</div><div class="cm-line">  cards.push(newCard);</div><div class="cm-line">  <span class="ͼb">return</span> cards;</div><div class="cm-line">}</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼm">/**</span></div><div class="cm-line"><span class="ͼm"> * Remove the card at the 0-based position</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @param {number[]} cards</span></div><div class="cm-line"><span class="ͼm"> * @param {number} position</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @returns {number[]} the cards without the removed card</span></div><div class="cm-line"><span class="ͼm"> */</span></div><div class="cm-line"><span class="ͼb">export</span> <span class="ͼb">function</span> <span class="ͼg">removeItem</span>(<span class="ͼg">cards</span>, <span class="ͼg">position</span>) {</div><div class="cm-line">  <span class="ͼb">if</span>(position === <span class="ͼd">0</span>) {</div><div class="cm-line">    cards.splice(position,position + <span class="ͼd">1</span>);</div><div class="cm-line">  } <span class="ͼb">else</span> {</div><div class="cm-activeLine cm-line">    cards.splice<span class="cm-matchingBracket">(</span>position,position<span class="cm-matchingBracket">)</span>;</div><div class="cm-line">  }</div><div class="cm-line">  </div><div class="cm-line">  <span class="ͼb">return</span> cards;</div><div class="cm-line">}</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼm">/**</span></div><div class="cm-line"><span class="ͼm"> * Remove card from the end of the cards array</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @param {number[]} cards</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @returns {number[]} the cards without the removed card</span></div><div class="cm-line"><span class="ͼm"> */</span></div><div class="cm-line"><span class="ͼb">export</span> <span class="ͼb">function</span> <span class="ͼg">removeItemFromTop</span>(<span class="ͼg">cards</span>) {</div><div class="cm-line">  <span class="ͼb">throw</span> <span class="ͼb">new</span> Error(<span class="ͼe">'Implement the removeItemFromTop function'</span>);</div><div class="cm-line">}</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼm">/**</span></div><div class="cm-line"><span class="ͼm"> * Insert newCard at beginning of the cards array</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @param {number[]} cards</span></div><div class="cm-line"><span class="ͼm"> * @param {number} newCard</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @returns {number[]} the cards including the new card</span></div><div class="cm-line"><span class="ͼm"> */</span></div><div class="cm-line"><span class="ͼb">export</span> <span class="ͼb">function</span> <span class="ͼg">insertItemAtBottom</span>(<span class="ͼg">cards</span>, <span class="ͼg">newCard</span>) {</div><div class="cm-line">  <span class="ͼb">throw</span> <span class="ͼb">new</span> Error(<span class="ͼe">'Implement the insertItemAtBottom function'</span>);</div><div class="cm-line">}</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼm">/**</span></div><div class="cm-line"><span class="ͼm"> * Remove card from the beginning of the cards</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @param {number[]} cards</span></div><div class="cm-line"><span class="ͼm"> *</span></div><div class="cm-line"><span class="ͼm"> * @returns {number[]} the cards without the removed card</span></div><div class="cm-line"><span class="ͼm"> */</span></div><div class="cm-gap" style="height: 384px;"></div></div><div class="cm-layer cm-layer-above cm-cursorLayer" aria-hidden="true" style="z-index: 150; animation-duration: 1200ms; animation-name: cm-blink;"><div class="cm-cursor cm-cursor-primary" style="left: 378px; top: 1274px; height: 19px;"></div></div><div class="cm-layer cm-selectionLayer" aria-hidden="true" style="z-index: -2;"></div></div></div></div></div></div><footer class="lhs-footer"><button type="button" class="btn-enhanced btn-s !ml-0 mr-auto ask-chatgpt-btn"><img src="./Exercism_files/automation-74edbd94c88caa49e17e429d7ff594f98e84db88.svg" alt="" width="16" height="16" class="c-icon"><span>Stuck? Get help</span></button><div class="run-tests-btn"><button type="button" class="btn-enhanced btn-s" disabled=""><img src="./Exercism_files/run-tests-7259457020c0ad37ed70454416e07956cb5d40cf.svg" alt="" class="c-icon"><span>Run Tests</span></button></div><div class="submit-btn"><button type="button" disabled="" class="btn-primary btn-s"><span>Submit</span></button></div></footer></div><div class="--split-divider"></div><div class="--split-rhs" style="min-width: 100px;"><div class="tabs"><button class="c-tab " role="tab" aria-selected="false" aria-controls="panel-instructions" id="tab-instructions" tabindex="-1"><img src="./Exercism_files/instructions-9600acff7c3b15930263c8cdd8c35d46960bd924.svg" alt="" class="c-icon"><span data-text="Instructions">Instructions</span></button><button class="c-tab  selected" role="tab" aria-selected="true" aria-controls="panel-results" id="tab-results" tabindex="0"><img src="./Exercism_files/test-results-5545e191cc6045b988e47e2fdfed00d72faebf4e.svg" alt="" class="c-icon"><span data-text="Results">Results</span></button><button class="c-tab " role="tab" aria-selected="false" aria-controls="panel-chat-gpt" id="tab-chat-gpt" tabindex="-1"><img src="./Exercism_files/automation-74edbd94c88caa49e17e429d7ff594f98e84db88.svg" alt="" class="c-icon"><span data-text="ChatGPT">ChatGPT</span></button><button class="c-tab " role="tab" aria-selected="false" aria-controls="panel-get-help" id="tab-get-help" tabindex="-1"><img src="./Exercism_files/help-c457520410f634c7ecee6c9aa99a2e306c605ec1.svg" alt="" class="c-icon"><span data-text="Get Help">Get help</span></button></div><div id="panel-instructions" role="tabpanel" aria-labelledby="tab-instructions" tabindex="0" class="--tab-panel" style="display: none;"><section class="instructions-pane"><div class="c-textual-content --small"><div class="introduction"><h2>Introduction</h2><div class="content"><p>In JavaScript, an array is a list-like structure with no fixed length which can hold any type of primitives or objects, even mixed types.</p>
+<p>To create an array, add elements between square brackets <code>[]</code>.
+To read from the array, put the index in square brackets <code>[]</code> after the identifier.
+The indices of an array start at zero.</p>
+<p>For example:</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-string">'two'</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'four'</span>];
+numbers[<span class="hljs-number">2</span>];
+<span class="hljs-comment">// =&gt; 3</span>
+</code></pre>
+<p>To retrieve the number of elements that are in an array, use the <code>length</code> property:</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-string">'two'</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'four'</span>];
+numbers.<span class="hljs-property">length</span>;
+<span class="hljs-comment">// =&gt; 4</span>
+</code></pre>
+<p>To change an element in the array, you assign a value at the index:</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-string">'two'</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'four'</span>];
+numbers[<span class="hljs-number">0</span>] = <span class="hljs-string">'one'</span>;
+numbers;
+<span class="hljs-comment">// =&gt; ['one', 'two', 3, 'four']</span>
+</code></pre>
+<h3 id="h-methods">Methods</h3>
+<p>Some of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noreferrer">methods</a> that are available on every Array object can be used to add or remove from the array.
+Here are a few to consider when working on this exercise:</p>
+<h4 id="h-push">push</h4>
+<blockquote>
+<p>The <code>push()</code> method adds one or more elements to the end of an array and returns the new length of the array.<sup class="footnote-ref"><a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit#fn1" id="fnref1">1</a></sup></p>
+</blockquote>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-string">'two'</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'four'</span>];
+numbers.<span class="hljs-title function_">push</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// =&gt; 5</span>
+numbers;
+<span class="hljs-comment">// =&gt; [1, 'two', 3, 'four', 5]</span>
+</code></pre>
+<h4 id="h-pop">pop</h4>
+<blockquote>
+<p>The <code>pop()</code> method removes the last element from an array and returns that element.
+This method changes the length of the array.<sup class="footnote-ref"><a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit#fn2" id="fnref2">2</a></sup></p>
+</blockquote>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-string">'two'</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'four'</span>];
+numbers.<span class="hljs-title function_">pop</span>(); <span class="hljs-comment">// =&gt; four</span>
+numbers;
+<span class="hljs-comment">// =&gt; [1, 'two', 3]</span>
+</code></pre>
+<h4 id="h-shift">shift</h4>
+<blockquote>
+<p>The <code>shift()</code> method removes the first element from an array and returns that removed element.
+This method changes the length of the array.<sup class="footnote-ref"><a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit#fn3" id="fnref3">3</a></sup></p>
+</blockquote>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-string">'two'</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'four'</span>];
+numbers.<span class="hljs-title function_">shift</span>(); <span class="hljs-comment">// =&gt; 1</span>
+numbers;
+<span class="hljs-comment">// =&gt; ['two', 3, 'four']</span>
+</code></pre>
+<h4 id="h-unshift">unshift</h4>
+<blockquote>
+<p>The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.<sup class="footnote-ref"><a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit#fn4" id="fnref4">4</a></sup></p>
+</blockquote>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-string">'two'</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'four'</span>];
+numbers.<span class="hljs-title function_">unshift</span>(<span class="hljs-string">'one'</span>); <span class="hljs-comment">// =&gt; 5</span>
+numbers;
+<span class="hljs-comment">// =&gt; ['one', 1, 'two', 3, 'four']</span>
+</code></pre>
+<h4 id="h-splice">splice</h4>
+<blockquote>
+<p>The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+This method returns an array containing the deleted elements.<sup class="footnote-ref"><a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit#fn5" id="fnref5">5</a></sup></p>
+</blockquote>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-string">'two'</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'four'</span>];
+numbers.<span class="hljs-title function_">splice</span>(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'one'</span>); <span class="hljs-comment">// =&gt; [3]</span>
+numbers;
+<span class="hljs-comment">// =&gt; [1, 'two', 'one', 'four']</span>
+</code></pre>
+<hr>
+<section class="footnotes">
+<ol>
+<li id="fn1">
+<p><code>push</code>, MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push (referenced September 29, 2021) <a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2">
+<p><code>pop</code>, MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop (referenced September 29, 2021) <a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3">
+<p><code>shift</code>, MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift (referenced September 29, 2021) <a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4">
+<p><code>unshift</code>, MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift (referenced September 29, 2021) <a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5">
+<p><code>splice</code>, MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice (referenced September 29, 2021) <a href="https://exercism.org/tracks/javascript/exercises/elyses-enchantments/edit#fnref5" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+</div></div><div class="instructions"><h2>Instructions</h2><div class="content"><p>As a magician-to-be, Elyse needs to practice some basics. She has a stack of cards that she wants to manipulate.</p>
+<p>To make things a bit easier she only uses the cards 1 to 10 so her stack of cards can be represented by an array of
+numbers. The position of a certain card corresponds to the index in the array. That means position 0 refers to the first
+card, position 1 to the second card etc.</p>
+
+<div class="c-textblock-note">
+<div class="c-textblock-header">Note</div>
+<div class="c-textblock-content">
+<p>All functions should update the array of cards and then return the modified array - a common way of working known as the Builder pattern, which allows you to nicely daisy-chain functions together.</p>
+</div>
+</div>
+
+</div><details class="c-details task" open=""><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 1</div><span class="summary-title">Retrieve a card from a stack</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" class="c-icon"></span></div></summary><div><p>To pick a card, return the card at index <code>position</code> from the given stack.</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> position = <span class="hljs-number">2</span>;
+<span class="hljs-title function_">getItem</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>], position);
+<span class="hljs-comment">// =&gt; 4</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task"><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 2</div><span class="summary-title">Exchange a card in the stack</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" class="c-icon"></span></div></summary><div><p>Perform some sleight of hand and exchange the card at index <code>position</code> with the replacement card provided. Return the
+adjusted stack.</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> position = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> replacementCard = <span class="hljs-number">6</span>;
+<span class="hljs-title function_">setItem</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>], position, replacementCard);
+<span class="hljs-comment">// =&gt; [1, 2, 6, 1]</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task"><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 3</div><span class="summary-title">Insert a card at the top of the stack</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" class="c-icon"></span></div></summary><div><p>Make a card appear by inserting a new card at the top of the stack. Return the adjusted stack.</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> newCard = <span class="hljs-number">8</span>;
+<span class="hljs-title function_">insertItemAtTop</span>([<span class="hljs-number">5</span>, <span class="hljs-number">9</span>, <span class="hljs-number">7</span>, <span class="hljs-number">1</span>], newCard);
+<span class="hljs-comment">// =&gt; [5, 9, 7, 1, 8]</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task"><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 4</div><span class="summary-title">Remove a card from the stack</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" class="c-icon"></span></div></summary><div><p>Make a card disappear by removing the card at the given <code>position</code> from the stack. Return the adjusted stack.</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> position = <span class="hljs-number">2</span>;
+<span class="hljs-title function_">removeItem</span>([<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>, <span class="hljs-number">8</span>], position);
+<span class="hljs-comment">// =&gt; [3, 2, 4, 8]</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task"><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 5</div><span class="summary-title">Remove the top card from the stack</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" class="c-icon"></span></div></summary><div><p>Make a card disappear by removing the card at the top of the stack. Return the adjusted stack.</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-title function_">removeItemFromTop</span>([<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>, <span class="hljs-number">8</span>]);
+<span class="hljs-comment">// =&gt; [3, 2, 6, 4]</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task"><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 6</div><span class="summary-title">Insert a card at the bottom of the stack</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" class="c-icon"></span></div></summary><div><p>Make a card appear by inserting a new card at the bottom of the stack. Return the adjusted stack.</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> newCard = <span class="hljs-number">8</span>;
+<span class="hljs-title function_">insertItemAtBottom</span>([<span class="hljs-number">5</span>, <span class="hljs-number">9</span>, <span class="hljs-number">7</span>, <span class="hljs-number">1</span>], newCard);
+<span class="hljs-comment">// =&gt; [8, 5, 9, 7, 1]</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task"><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 7</div><span class="summary-title">Remove a card from the bottom of the stack</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" class="c-icon"></span></div></summary><div><p>Make a card disappear by removing the card at the bottom of the stack. Return the adjusted stack.</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-title function_">removeItemAtBottom</span>([<span class="hljs-number">8</span>, <span class="hljs-number">5</span>, <span class="hljs-number">9</span>, <span class="hljs-number">7</span>, <span class="hljs-number">1</span>]);
+<span class="hljs-comment">// =&gt; [5, 9, 7, 1]</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details><details class="c-details task"><summary class="--summary"><div class="--summary-inner"><div class="task-marker">Task 8</div><span class="summary-title">Check the size of the stack</span><span class="--closed-icon"><img src="./Exercism_files/chevron-right-4edf20ec1116acf2e371e8ff03809451274a7b32.svg" alt="" class="c-icon"></span><span class="--open-icon"><img src="./Exercism_files/chevron-down-5ae28e42ee217bae38f4eb1c119cafd0301dd5f6.svg" alt="" class="c-icon"></span></div></summary><div><p>Check whether the size of the stack is equal to <code>stackSize</code> or not.</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-keyword">const</span> stackSize = <span class="hljs-number">4</span>;
+<span class="hljs-title function_">checkSizeOfStack</span>([<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>, <span class="hljs-number">8</span>], stackSize);
+<span class="hljs-comment">// =&gt; false</span>
+</code></pre>
+</div><div><button class="btn-default btn-s hints-btn"><span>Stuck? Reveal Hints</span><img src="./Exercism_files/modal-d86b25d9bd28d7ab6722dc92f9971124b0229797.svg" alt="Opens in a modal" class="c-icon"></button></div></details></div><div class="debug-info"><h2>How to debug</h2><div><p>When a test fails, a message is displayed describing what went wrong and for which input. You can also use the fact that any <code>console</code> output will be shown too. You can write to the console using:</p>
+<pre><code class="language-javascript hljs" data-highlighted="true"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'Debug message'</span>);
+</code></pre>
+</div></div></div></section></div><div id="panel-results" role="tabpanel" aria-labelledby="tab-results" tabindex="0" class="--tab-panel"><section class="results"><div class="c-test-run"><div role="status" class="running"><img src="https://assets.exercism.org/assets/icons/spinner-0813469c6c8f037b2e3d8aa5e987173eec009c02.svg" alt="" class="c-icon animate-spin-slow"><div class="c-loading-bar"><div class="bar" style="animation-duration: 6s;"></div></div><p><strong>Running tests…</strong>&nbsp;<span>Estimated running time ~ 6s</span></p><button type="button" class="btn-default btn-xs">Cancel</button></div></div></section></div></div></div></div></div>
+
+</turbo-frame>
+<div id="portal-container"></div>
+<div class="c-loading-overlay"></div>
+<footer id="site-footer" style="display: block;"><div class="lg-container">
+<div class="nfp mb-40 md:mb-58">
+<img alt="" class="c-icon" src="./Exercism_files/exercism-face-gradient-31ce1b1261c54ead735cf687a2dc8549b3d00bb1.svg">
+<h2 class="text-h2 mb-32">Help us keep Exercism free for everyone, everywhere.</h2>
+<div class="c-react-component c-react-wrapper-donations-footer-form" data-react-id="donations-footer-form" data-react-data="{&quot;request&quot;:{&quot;endpoint&quot;:&quot;https://exercism.org/api/v2/payments/subscriptions/current&quot;,&quot;options&quot;:{&quot;initial_data&quot;:{&quot;subscription&quot;:null}}},&quot;user_signed_in&quot;:true,&quot;captcha_required&quot;:false,&quot;recaptcha_site_key&quot;:&quot;6LdNREYjAAAAACOk4_z0QdYbnw7dzf7hgcy4NxRv&quot;,&quot;links&quot;:{&quot;settings&quot;:&quot;https://exercism.org/settings/donations&quot;,&quot;success&quot;:&quot;https://exercism.org/donated&quot;}}" data-react-hydrate="false"><form class="donations-form flex flex-col md:flex-row items-stretch"><div class="amounts mb-16 md:mb-0"><button class="btn-m selected" type="button">$16</button><button class="btn-m" type="button">$32</button><button class="btn-m" type="button">$64</button><button class="btn-m" type="button">$128</button><label class="c-faux-input"><div class="icon">$</div><input type="number" min="0" step="0.01" placeholder="Custom amount" value=""></label></div><button class="btn-m continue-btn w-100 md:w-auto md:h-auto md:ml-32"><span>Continue</span><img src="./Exercism_files/arrow-right-0f5e363467e0c55fe280b4864639a9c677afa0d2.svg" alt="" class="c-icon"></button></form></div>
+<h3 class="text-h4 mt-32 mb-8">Exercism is open source and 100% free.</h3>
+<p class="text-p-large">Help us provide opportunity for people of all backgrounds by helping them develop their programming skills through code practice and mentorship.</p>
+</div>
+<hr>
+<div class="site-links mt-24 md:mt-56">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-x-40">
+<div class="col">
+<h3>Editions</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/">Exercism</a></li>
+<li><a href="https://exercism.org/docs/using/editions/teams">Exercism for Teams</a></li>
+<li><a href="https://exercism.org/docs/using/editions/research">Exercism Research</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>About</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/about">About Exercism</a></li>
+<li><a href="https://exercism.org/about/team">Our team</a></li>
+<li><a href="https://exercism.org/contributing/contributors">Contributors</a></li>
+<li><a href="https://exercism.org/about/supporters/organisations">Partners</a></li>
+<li><a href="https://exercism.org/about/supporters/individuals">Individual supporters</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Get involved</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/insiders">Exercism Insiders</a></li>
+<li><a href="https://exercism.org/contributing">Contribute</a></li>
+<li><a href="https://exercism.org/mentoring">Mentor</a></li>
+<li><a href="https://exercism.org/donate">Donate</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Legal &amp; policies</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/docs/using/legal/terms-of-service">Terms of usage</a></li>
+<li><a href="https://exercism.org/docs/using/legal/privacy-policy">Privacy policy</a></li>
+<li><a href="https://exercism.org/docs/using/legal/cookie-policy">Cookie policy</a></li>
+<li><a href="https://exercism.org/docs/using/legal/code-of-conduct">Code of conduct</a></li>
+<li><a href="https://exercism.org/docs/using/legal/accessibility">Accessibility statement</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Keep in touch</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/blog">Exercism's blog</a></li>
+<li><a href="https://github.com/exercism/exercism">Discuss on GitHub</a></li>
+<li><a href="https://exercism.org/docs/using/contact">Contact us</a></li>
+<li><a href="https://exercism.org/docs/using/report-abuse">Report abuse</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Get help</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/docs">Exercism's Docs</a></li>
+<li><a href="https://exercism.org/docs/using/getting-started">Getting started</a></li>
+<li><a href="https://exercism.org/docs/using/faqs">FAQs</a></li>
+<li><a href="https://exercism.org/docs/using/solving-exercises/working-locally">Installing the CLI</a></li>
+<li><a href="https://exercism.org/cli-walkthrough">Interactive CLI Walkthrough</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="socials mt-24 mb-40 md:mb-56">
+<a class="icon twitter" href="https://twitter.com/exercism_io"><img alt="" class="c-icon" src="./Exercism_files/external-site-twitter-6717f73e3402edb200e17233edc6d9aa756d084c.svg">
+</a><a class="icon facebook" href="https://facebook.com/exercism.io"><img alt="" class="c-icon" src="./Exercism_files/external-site-facebook-30d7c9862735514b98cc354bc12f460a4a40d26b.svg">
+</a><a class="icon github" href="https://github.com/exercism"><img alt="" class="c-icon" src="./Exercism_files/external-site-github-10a8a76f55f4e6955417df6aa374dd48fab4392b.svg">
+</a></div>
+<hr>
+<div class="tracks mt-32 md:mt-48 mb-32 md:mb-48 md:items-center">
+<div class="hidden md:block">
+<h2 class="text-h3">Our programming language tracks</h2>
+<hr class="c-divider mt-28 mb-36">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-x-32">
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/8th">8th</a></li>
+<li><a href="https://exercism.org/tracks/abap">ABAP</a></li>
+<li><a href="https://exercism.org/tracks/awk">AWK</a></li>
+<li><a href="https://exercism.org/tracks/ballerina">Ballerina</a></li>
+<li><a href="https://exercism.org/tracks/bash">Bash</a></li>
+<li><a href="https://exercism.org/tracks/c">C</a></li>
+<li><a href="https://exercism.org/tracks/csharp">C#</a></li>
+<li><a href="https://exercism.org/tracks/cpp">C++</a></li>
+<li><a href="https://exercism.org/tracks/cfml">CFML</a></li>
+<li><a href="https://exercism.org/tracks/clojure">Clojure</a></li>
+<li><a href="https://exercism.org/tracks/cobol">COBOL</a></li>
+<li><a href="https://exercism.org/tracks/coffeescript">CoffeeScript</a></li>
+<li><a href="https://exercism.org/tracks/common-lisp">Common Lisp</a></li>
+<li><a href="https://exercism.org/tracks/crystal">Crystal</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/d">D</a></li>
+<li><a href="https://exercism.org/tracks/dart">Dart</a></li>
+<li><a href="https://exercism.org/tracks/delphi">Delphi Pascal</a></li>
+<li><a href="https://exercism.org/tracks/elixir">Elixir</a></li>
+<li><a href="https://exercism.org/tracks/elm">Elm</a></li>
+<li><a href="https://exercism.org/tracks/emacs-lisp">Emacs Lisp</a></li>
+<li><a href="https://exercism.org/tracks/erlang">Erlang</a></li>
+<li><a href="https://exercism.org/tracks/euphoria">Euphoria</a></li>
+<li><a href="https://exercism.org/tracks/fsharp">F#</a></li>
+<li><a href="https://exercism.org/tracks/fortran">Fortran</a></li>
+<li><a href="https://exercism.org/tracks/gleam">Gleam</a></li>
+<li><a href="https://exercism.org/tracks/go">Go</a></li>
+<li><a href="https://exercism.org/tracks/groovy">Groovy</a></li>
+<li><a href="https://exercism.org/tracks/haskell">Haskell</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/java">Java</a></li>
+<li><a href="https://exercism.org/tracks/javascript">JavaScript</a></li>
+<li><a href="https://exercism.org/tracks/jq">jq</a></li>
+<li><a href="https://exercism.org/tracks/julia">Julia</a></li>
+<li><a href="https://exercism.org/tracks/kotlin">Kotlin</a></li>
+<li><a href="https://exercism.org/tracks/lfe">LFE</a></li>
+<li><a href="https://exercism.org/tracks/lua">Lua</a></li>
+<li><a href="https://exercism.org/tracks/mips">MIPS Assembly</a></li>
+<li><a href="https://exercism.org/tracks/nim">Nim</a></li>
+<li><a href="https://exercism.org/tracks/objective-c">Objective-C</a></li>
+<li><a href="https://exercism.org/tracks/ocaml">OCaml</a></li>
+<li><a href="https://exercism.org/tracks/perl5">Perl</a></li>
+<li><a href="https://exercism.org/tracks/pharo-smalltalk">Pharo</a></li>
+<li><a href="https://exercism.org/tracks/php">PHP</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/plsql">PL/SQL</a></li>
+<li><a href="https://exercism.org/tracks/powershell">PowerShell</a></li>
+<li><a href="https://exercism.org/tracks/prolog">Prolog</a></li>
+<li><a href="https://exercism.org/tracks/purescript">PureScript</a></li>
+<li><a href="https://exercism.org/tracks/pyret">Pyret</a></li>
+<li><a href="https://exercism.org/tracks/python">Python</a></li>
+<li><a href="https://exercism.org/tracks/r">R</a></li>
+<li><a href="https://exercism.org/tracks/racket">Racket</a></li>
+<li><a href="https://exercism.org/tracks/raku">Raku</a></li>
+<li><a href="https://exercism.org/tracks/reasonml">ReasonML</a></li>
+<li><a href="https://exercism.org/tracks/red">Red</a></li>
+<li><a href="https://exercism.org/tracks/ruby">Ruby</a></li>
+<li><a href="https://exercism.org/tracks/rust">Rust</a></li>
+<li><a href="https://exercism.org/tracks/scala">Scala</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/scheme">Scheme</a></li>
+<li><a href="https://exercism.org/tracks/sqlite">SQLite</a></li>
+<li><a href="https://exercism.org/tracks/sml">Standard ML</a></li>
+<li><a href="https://exercism.org/tracks/swift">Swift</a></li>
+<li><a href="https://exercism.org/tracks/tcl">Tcl</a></li>
+<li><a href="https://exercism.org/tracks/typescript">TypeScript</a></li>
+<li><a href="https://exercism.org/tracks/unison">Unison</a></li>
+<li><a href="https://exercism.org/tracks/vlang">V</a></li>
+<li><a href="https://exercism.org/tracks/vimscript">Vim script</a></li>
+<li><a href="https://exercism.org/tracks/vbnet">Visual Basic</a></li>
+<li><a href="https://exercism.org/tracks/wasm">WebAssembly</a></li>
+<li><a href="https://exercism.org/tracks/wren">Wren</a></li>
+<li><a href="https://exercism.org/tracks/x86-64-assembly">x86-64 Assembly</a></li>
+<li><a href="https://exercism.org/tracks/zig">Zig</a></li>
+</ul>
+</div>
+<div class="col hidden md:block mt-32 xl:mt-0">
+<h3 class="text-h6">Want to add a language track to Exercism?</h3>
+<p class="text-p-base">
+Start a new topic
+<a href="https://forum.exercism.org/c/exercism/4">in the forum</a>
+and let's discuss it.
+</p>
+</div>
+</div>
+</div>
+<hr>
+<div class="legals mt-24 md:mt-32 mb-32 md:mb-40 flex md:items-center flex-col md:flex-row">
+<div class="company mb-16 md:mb-0 md:mr-32">
+Exercism is a not-for-profit organisation
+<a href="https://find-and-update.company-information.service.gov.uk/company/11733062">registered in the UK</a>.
+Its trustees are <a href="https://exercism.github.io/kytrinyx/">Katrina Owen</a>, <a href="https://ihid.info/">Jeremy Walker</a> and <a href="https://erikschierboom.com/">Erik Schierboom</a>.
+</div>
+<div class="copyright md:ml-auto">
+© 2024 Exercism
+</div>
+</div>
+</div>
+</footer>
+
+
+
+<div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div><div class="ReactModalPortal"></div></body></html>
