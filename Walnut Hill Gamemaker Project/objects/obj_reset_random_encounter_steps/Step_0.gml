@@ -1,0 +1,1 @@
+global.player_step_count = 0;
