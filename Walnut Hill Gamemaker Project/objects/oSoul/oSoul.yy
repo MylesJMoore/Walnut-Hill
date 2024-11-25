@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_soul",
-    "path": "sprites/spr_soul/spr_soul.yy",
+    "name": "spr_battle_soul",
+    "path": "sprites/spr_battle_soul/spr_battle_soul.yy",
   },
   "spriteMaskId": null,
   "visible": true,

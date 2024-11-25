@@ -122,6 +122,7 @@ function getDocumentation()
 		" - Bullet Pattern - Random Large Horizontal Bullets explode to Burst",
 		" - Bullet Pattern - Horizonal Spear Right",
 		" - Bullet Pattern - Horizonal Spear Left",
+		" - Heart Break death screen with continue",
 	]; 
 
 	todos = [

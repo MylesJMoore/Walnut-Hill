@@ -35,3 +35,13 @@
 #macro FOLLOWER_3_IDLEUP s_follower_3_up
 #macro FOLLOWER_3_IDLELEFT s_follower_3_left
 #macro FOLLOWER_3_IDLEDOWN s_follower_3_down
+
+//Soul Sprites
+#macro RESILIENCE 1
+#macro DETERMINATION -10
+#macro BRAVERY 10
+#macro JUSTICE 10
+#macro KINDNESS 10
+#macro PATIENCE 10
+#macro INTEGRITY 6
+#macro PERSEVERANCE -6

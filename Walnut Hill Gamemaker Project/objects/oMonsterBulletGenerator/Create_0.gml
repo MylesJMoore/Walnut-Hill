@@ -9,7 +9,7 @@ pattern = global.monster_bullet_pattern; // 0 = Straight line, 1 = Circle, 2 = R
 
 // Other properties for bullets
 bullet_speed = 2;
-bullet_damage = 0;
+bullet_damage = 10;
 
 //Make Monster Soul Visible
 oMonsterSoul.image_alpha = 1;

@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Souls",
-    "path": "folders/Battle System - Undertale/Sprites/Souls.yy",
+    "name": "Soul Battle Start",
+    "path": "folders/Battle System - Undertale/Sprites/Souls/Soul Battle Start.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

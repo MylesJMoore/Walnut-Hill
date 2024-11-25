@@ -17,3 +17,5 @@ global.BORDER_SURFACE = -1;
 battleEnd = false;
 battleEndDelay = 120;
 battleEndDelayFinished = false;
+start_game_over = false;
+game_has_ended = false;

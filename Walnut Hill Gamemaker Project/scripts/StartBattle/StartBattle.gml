@@ -15,6 +15,6 @@ function StartBattle(_enemy = noone,_overworldEnemy = noone, _random = false) {
 	global.current_enemy_macro = _enemy;
 	//Remove Player and Follower Objects
 	RemovePlayerAndFollowers();
-	room_goto(rm_battle_test);
+	room_goto(rm_battle);
 	global.player_triggered_battle = true;
 }

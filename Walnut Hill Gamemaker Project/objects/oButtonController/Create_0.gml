@@ -22,3 +22,7 @@ BelowUIReferenceNum = 0;
 
 enemySpared = false;
 enemyKilled = false;
+playerKilled = false;
+
+gameOverTimer = 160;
+gameOverTimerSet = false;

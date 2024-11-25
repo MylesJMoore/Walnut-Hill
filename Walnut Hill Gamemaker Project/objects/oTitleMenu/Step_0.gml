@@ -107,7 +107,7 @@ if(confirm_key) {
 				case 5: room_goto(rm_debug_dialogue_system); break;
 				
 				//Battle Test
-				case 6: room_goto(rm_battle_test); break;
+				case 6: room_goto(rm_battle); break;
 			}
 		break;
 		

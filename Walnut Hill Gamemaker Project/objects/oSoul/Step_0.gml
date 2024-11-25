@@ -63,12 +63,12 @@ y += yspeed;
 if (global.player_invisible_frames > 0) {
 	global.player_invisible_frames -= 1;
 	if(global.player_invisible_frames == 30) {
-		image_index = 0;
+		oSoul.sprite_index = spr_battle_soul;
+		image_index = global.soul_selected;
 	}
-	//image_speed = 1;
 } else {
-	image_speed = 0;
-	image_index = 0;
+	oSoul.sprite_index = spr_battle_soul;
+	image_index = global.soul_selected;
 }
 
 if (global.soulCanShoot) {

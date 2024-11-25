@@ -1,4 +1,4 @@
-if(global.open_menu && !global.open_stats) {
+if(global.open_menu && !global.open_stats && !global.open_soul_selection) {
 	#region Keyboard Support
 	//Keyboard Inputs
 	var up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
@@ -98,18 +98,20 @@ if(global.open_menu && !global.open_stats) {
 					//Open Stats
 					case 1: 
 						show_debug_message("Open Stats!"); 
-						//removePlayerMenuTextbox();
-						//TurnOffPlayerMenu();
 						TurnOnStatsMenu();
 						break;
 		
 					//Open Soul
 					case 2: 
+					/*
 						if(!global.open_soul) {
 							removePlayerMenuTextbox();
 							global.open_soul = true;
 							global.show_words_of_wisdom = true;
 						}
+						*/
+						show_debug_message("Open Soul!"); 
+						TurnOnSoulSelectionMenu();
 						break;
 				}
 			break;

@@ -1,6 +1,6 @@
 /// @function BattleFlee
 
-function BattleFlee() {
+function BattleFlee(_room = false, _x = false, _y = false) {
 	//Return player to Overworld
 	room_goto(global.player_previous_room);
 	

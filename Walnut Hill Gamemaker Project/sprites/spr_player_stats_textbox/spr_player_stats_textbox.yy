@@ -50,7 +50,7 @@
   "origin": 0,
   "parent": {
     "name": "Sprites",
-    "path": "folders/Menu Player Stats System/Sprites.yy",
+    "path": "folders/Menu - Player Stats/Sprites.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

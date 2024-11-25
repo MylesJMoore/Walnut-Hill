@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Souls",
-    "path": "folders/Battle System - Undertale/Sprites/Souls.yy",
+    "name": "Soul Defeated",
+    "path": "folders/Battle System - Undertale/Sprites/Souls/Soul Defeated.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -63,6 +63,5 @@ if(global.open_menu) {
 			global.show_words_of_wisdom = false;
 		}
 	#endregion
-	
 
 }

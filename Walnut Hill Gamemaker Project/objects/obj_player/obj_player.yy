@@ -35,8 +35,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_myles_down",
-    "path": "sprites/s_myles_down/s_myles_down.yy",
+    "name": "s_milo_down",
+    "path": "sprites/s_milo_down/s_milo_down.yy",
   },
   "spriteMaskId": null,
   "visible": true,

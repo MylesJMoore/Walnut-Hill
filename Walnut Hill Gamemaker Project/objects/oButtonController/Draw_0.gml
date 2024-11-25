@@ -125,11 +125,13 @@
 	{
 		ButtonSprites[2] = sMenuNoItems;
 	}
-
+	
 	// Draw every button sprite with the "Unselected" form
 	for (var i = 0; i < 4; i++) 
 	{
-		draw_sprite(ButtonSprites[i], 0, ButtonPositions_X[i], 430);
+		if(!oBulletBoard.game_has_ended) {
+			draw_sprite(ButtonSprites[i], 0, ButtonPositions_X[i], 430);
+		}
 	}
 #endregion
 
@@ -164,9 +166,8 @@ if (global.battleSelectionMenu > -1)
 			
 			global.battleSelectionMenu = clamp(global.battleSelectionMenu, 0, 3);
 			for (var i = 0; i < 4; i++) {
-				draw_sprite(ButtonSprites[i], (global.battleSelectionMenu == i && !instance_exists(oMonsterSequenceGenerator)), ButtonPositions_X[i], 430);
-				if !instance_exists(oMonsterSequenceGenerator) {
-					//draw_sprite(spr_soul, 0, ButtonPositions_X[global.battleSelectionMenu] + 16, 452);  
+				if(!oBulletBoard.game_has_ended) {
+					draw_sprite(ButtonSprites[i], (global.battleSelectionMenu == i && !instance_exists(oMonsterSequenceGenerator)), ButtonPositions_X[i], 430);
 				}
 			}
 		}
@@ -274,7 +275,7 @@ if (global.battleSelectionMenu > -1)
 	}
 	
 	// Confirm an input
-	if(confirm_key) {
+	if(confirm_key && !oBulletBoard.game_has_ended) {
 		// Leave battle if battle has ended 
 		if(oBulletBoard.battleEnd && oBulletBoard.battleEndDelay == 0) {
 			oBulletBoard.battleEnd = false;
@@ -373,6 +374,18 @@ if (global.battleSelectionMenu > -1)
 				}
 				break;
 		}
+	}
+	
+	if(confirm_key && oBulletBoard.game_has_ended && !gameOverTimerSet) {
+		gameOverTimerSet = true;
+	}
+	
+	if(gameOverTimerSet) {
+		gameOverTimer--;
+	}
+	
+	if(gameOverTimer <= 0) {
+		BattleFlee();
 	}
 
 #endregion

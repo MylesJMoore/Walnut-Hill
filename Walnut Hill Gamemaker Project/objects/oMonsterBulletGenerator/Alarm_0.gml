@@ -1,3 +1,4 @@
+/// @description End of Bullet Pattern
 //Check if Enemy has been defeated
 if (global.monster[0].MyHP <= 0) {
 	//oMonsterSoul.image_alpha = 1; //Hiding the monster soul sprite
@@ -13,7 +14,7 @@ global.soulCanShoot = false;
 SetBattleMenuDefaults();
 
 //Cleanup Objects
-CleanupBattleObjects()
+CleanupBattleObjects();
 
 //Turn off this Alarm
 alarm[0] = false;

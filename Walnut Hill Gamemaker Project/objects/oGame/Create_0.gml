@@ -41,6 +41,18 @@ global.open_inventory = false;
 global.open_items = false;
 global.open_stats = false;
 global.open_soul = false;
+global.open_soul_selection = false;
+global.soul_selected = 0;
+global.soul_lookup = [
+            "Resilience",
+            "Determination",
+			"Bravery",
+			"Justice",
+			"Kindness",
+			"Patience",
+			"Integrity",
+			"Perseverance"
+];
 global.show_words_of_wisdom = false;
 global.menu_player_name_font = fUndertale;
 global.menu_player_info_font = fUndertaleMenuStats;
@@ -60,13 +72,15 @@ global.inventory_menu_goto_previous_page = false;
 global.top_of_inventory_menu = false;
 
 //Player Information
-global.player_hp = 35;
+global.player_hp = 50;
 global.player_max_hp = 50;
 global.player_exp = 0;
 global.player_level = 1;
 global.player_gold = 999;
 global.player_name = "Sato";
-global.player_attack = 20;
+global.player_base_attack = 1;
+global.player_base_defense = 1;
+global.player_attack = 0;
 global.player_defense = 0;
 global.player_weapon = "Chara's Knife";
 global.player_armor = "Franklin Badge";
